@@ -25,7 +25,8 @@ const movieDB = {
 };
 
 const rekl = document.querySelectorAll('.promo__adv img'),
-           genre = document.querySelector('.promo__genre');          
+            bgimg = document.querySelector('.promo__bg'),
+           genre = bgimg.querySelector('.promo__genre');          
 
 
 rekl.forEach(item => {
@@ -33,3 +34,4 @@ rekl.forEach(item => {
     item.remove();
 });
 genre.textContent = "Драма";
+bgimg.style.cssText = "background: url('img/bg.jpg');background-repeat:no-repeat; background-position:center;background-size:cover";
