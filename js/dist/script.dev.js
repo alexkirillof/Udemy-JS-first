@@ -14,11 +14,18 @@
 'use strict';
 
 var movieDB = {
-  movies: ["Логан", "Лига справедливости", "Ла-ла лэнд", "Одержимость", "Скотт Пилигрим против..."]
+  movies: ["aaa", "Лига справедливости", "Ла-ла лэнд", "Одержимость", "Скотт Пилигрим sss", "Бэтмен"]
 };
 var rekl = document.querySelectorAll('.promo__adv img'),
-    genre = document.querySelector('.promo__genre');
+    bgimg = document.querySelector('.promo__bg'),
+    genre = bgimg.querySelector('.promo__genre'),
+    films = document.querySelector('.promo__interactive-list');
 rekl.forEach(function (item) {
   item.remove();
 });
 genre.textContent = "Драма";
+bgimg.style.cssText = "background: url('img/bg.jpg');background-repeat:no-repeat; background-position:center;background-size:cover";
+films.innerHTML = " ";
+movieDB.movies.forEach(function (item, j) {
+  films.innerHTML += "<li class=\"promo__interactive-item\">".concat(j + 1, ". ").concat(item, "\n    <div class=\"delete\"></div>\n</li>");
+});
